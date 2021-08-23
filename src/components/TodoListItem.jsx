@@ -5,7 +5,7 @@ import {
 } from 'react-icons/md';
 import cn from 'classnames';
 import './TodoListItem.scss';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 
 const TodoListItem = ({ todo, onRemove, onToggle }) => {
   const { checked, text, id } = todo;
@@ -28,4 +28,4 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
   );
 };
 
-export default TodoListItem;
+export default memo(TodoListItem); // 전달받은 props가 변경될 때 리렌더링 하도록 제한
